@@ -27,8 +27,9 @@ public class Computer extends Model {
     @Formats.DateTime(pattern="yyyy-MM-dd")
     public Date discontinued;
     
-    @ManyToOne
-    public Company company;
+//    @ManyToOne
+//    public Company company;
+    public String company;
     
     /**
      * Generic query helper for entity Computer with id Long
@@ -49,7 +50,6 @@ public class Computer extends Model {
             find.where()
                 .ilike("name", "%" + filter + "%")
                 .orderBy(sortBy + " " + order)
-                .fetch("company")
                 .findPagingList(pageSize)
                 .getPage(page);
     }

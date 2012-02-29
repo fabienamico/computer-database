@@ -42,7 +42,7 @@
 					class="btn primary">
 			</form>
 
-			<a class="btn success" id="add" href="/computers/new">Add a new
+			<a class="btn success" id="add" href="#computer">Add a new
 				computer</a>
 
 		</div>
@@ -107,9 +107,9 @@
             
     <h1>Add a computer</h1>
     
-        <form id="computer-form">
+        <form id="computer-form" action="/">
     
-			<input type="hidden" id="id" name="id" class="id" value="<%= computer.id %>" >
+			<input type="hidden" id="id" name="id" class="id" value="<%= computer.id %>" />
 
             <fieldset>
 
@@ -117,7 +117,7 @@
                     <label for="name">Computer name</label>
                     <div class="input">
                         
-                    <input type="text" id="name" name="name" class="name" value="<%= computer.name %>" >
+                    <input type="text" id="name" name="name" class="name" value="<%= computer.name %>" />
 
                         <span class="help-inline">Required</span> 
                     </div>
