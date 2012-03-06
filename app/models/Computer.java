@@ -53,6 +53,16 @@ public class Computer extends Model {
                 .findPagingList(pageSize)
                 .getPage(page);
     }
+
+	@Override
+	public String toString() {
+		return "Computer [id=" + id + ", name=" + name + ", introduced="
+				+ introduced + ", discontinued=" + discontinued + ", company="
+				+ company + "]";
+	}
+    
+    
+    
     
 }
 

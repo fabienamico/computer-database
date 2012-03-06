@@ -13,7 +13,7 @@
                     <label for="name">Computer name</label>
                     <div class="input">
                         
-                    <input type="text" id="name" name="name" class="name" value="<%= computer.name %>" />
+                    <input type="text" id="name" name="name"  value="<%= computer.name %>" />
 
                         <span class="help-inline">Required</span> 
                     </div>
@@ -23,7 +23,7 @@
                     <label for="introduced">Introduced date</label>
                     <div class="input">
                         
-                    <input type="text" id="introduced" name="introduced" value="" >
+                    <input type="text" id="introduced" name="introduced" value="<%= computer.introduced %>" >
 
                         <span class="help-inline">Date ('yyyy-MM-dd')</span> 
                     </div>
@@ -33,19 +33,18 @@
                     <label for="discontinued">Discontinued date</label>
                     <div class="input">
                         
-                    <input type="text" id="discontinued" name="discontinued" value="" >
+                    <input type="text" id="discontinued" name="discontinued" value="<%= computer.discontinued %>" >
 
                         <span class="help-inline">Date ('yyyy-MM-dd')</span> 
                     </div>
                 </div>
 
                 <div class="clearfix ">
-                    <label for="discontinued">Discontinued date</label>
+                    <label for="discontinued">Company name</label>
                     <div class="input">
                         
-                    <input type="text" id="company_name" name="company_name" value="" >
+                    <input type="text" id="company" name="company" value="<%= computer.company %>" >
 
-                        <span class="help-inline">Date ('yyyy-MM-dd')</span> 
                     </div>
                 </div>
 

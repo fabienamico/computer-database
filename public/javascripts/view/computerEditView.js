@@ -23,7 +23,7 @@ window.ComputerEditView = Backbone.View.extend({
 			
 			e.preventDefault();
 			
-			this.computer.set({ name:$('#name').val() });
+			this.computer.set({ name:$('#name').val(), introduced:$('#introduced').val(), discontinued:$('#discontinued').val(), company:$('#company').val()  });
 			
 
 			this.$('input[type="text"]').val(''); //on vide le form

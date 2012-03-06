@@ -32,17 +32,17 @@ public class Application extends Controller {
     }
     
     public static Result save(){
-    	System.out.println("Save : Controller");
+    	System.out.println("Save : Controller JSON : " + request().body().asJson());
     	JsonNode json = request().body().asJson();
     	ObjectMapper mapper = new ObjectMapper();
     	Computer computer = null;
     	try {
 			
     		computer = mapper.readValue(json, Computer.class);
+    		System.out.println("Computer : " + computer);
     		computer.save();
     		    		
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return internalServerError();
 		} 

@@ -48,9 +48,9 @@
           			<% _.each(computers, function(computer) { %>
 						<tr>
 							<td><a href="#computer/<%=computer.id %>"><%= computer.name %></a></td>
-							<td><em>-</em></td>
-							<td><em>-</em></td>
-							<td><em>-</em></td>
+							<td><em><%= computer.introduced %></em></td>
+							<td><em><%= computer.discontinued %></em></td>
+							<td><em><%= computer.company %></em></td>
 							<td><a class="btn small danger" id="remove" href="#delete-computer/<%=computer.id %>">Remove</a></td>
 						</tr>
             
