@@ -31,7 +31,8 @@
 		routes : {
 			"" : "root",
 			"computer/:id" : "updateComputer",
-			"computer" : "createComputer"
+			"computer" : "createComputer",
+			"delete-computer/:id" : "deleteComputer"
 		},
 
 		root : function() {
@@ -45,6 +46,14 @@
 
 		createComputer : function() {
 			this.computerEditView.render(new Computer());
+		},
+		
+		deleteComputer : function(id) {
+			that = this;
+			this.computersCollectionView.collection.get(id).destroy({
+				success: function() {
+					that.computersCollectionView.render();
+			}});
 		}
 
 	});

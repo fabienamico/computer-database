@@ -26,7 +26,7 @@ table.computers em {
     color: #aaa;
 }
 
-table.computers .introduced, table.computers .discontinued {
+table.computers .introduced, table.computers .discontinued .action {
     width: 10%;
     min-width: 100px;
 }

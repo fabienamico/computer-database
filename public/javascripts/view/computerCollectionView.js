@@ -3,11 +3,8 @@ window.ComputersCollectionView = Backbone.View.extend({
 
 		initialize : function() {
 			this.template = _.template(tpl.get('computer-list'));
-
-			/*--- binding ---*/	
 			this.collection.bind('change', this.render, this);
 			this.collection.bind('add', this.render, this);
-			/*---------------*/
 
 		},
 

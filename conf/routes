@@ -10,7 +10,7 @@ GET     /computers                  controllers.Application.list()
 GET     /computers/:id              controllers.Application.get(id:Long)
 PUT 	/computers/:id				controllers.Application.update(id:Long)
 POST    /computers             		controllers.Application.save()
-
+DELETE 	/computers/:id 				controllers.Application.delete(id:Long)
 
 # Delete a computer
 #POST    /computers/:id/delete       controllers.Application.delete(id:Long)

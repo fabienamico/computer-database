@@ -77,6 +77,12 @@ public class Application extends Controller {
 		return ok();
     }
     
+    public static Result delete(Long id){
+    	System.out.println("Remove");
+    	Computer.find.byId(id).delete();
+    	return ok();
+    }
+    
     public static Result get(Long id){
     	Computer computer = Computer.find.byId(id);
 		System.out.println("Get Computer : " + computer.id);
