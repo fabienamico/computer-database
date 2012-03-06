@@ -7,15 +7,10 @@ GET     /                           controllers.Application.index()
 
 # Computers list (look at the default values for pagination parameters)
 GET     /computers                  controllers.Application.list()
-
-# Add computer
-#GET     /computers/new              controllers.Application.create()
-#POST    /computers                  controllers.Application.save()
-
-# Edit existing computer
-GET     /computers/:id              	controllers.Application.get(id:Long)
+GET     /computers/:id              controllers.Application.get(id:Long)
+PUT 	/computers/:id				controllers.Application.update(id:Long)
 POST    /computers             		controllers.Application.save()
-PUT 	/computers/:id 				controllers.Application.update(id:Long)
+
 
 # Delete a computer
 #POST    /computers/:id/delete       controllers.Application.delete(id:Long)

@@ -18,12 +18,12 @@ window.Computer = Backbone.Model.extend({
 
 		initialize : function Computer() {
 
-			this.url = "/computers";
+			this.urlRoot = "/computers";
 
 			this.bind("error", function(model, error) {
 				console.log(error);
 			});
-
+			
 		}
 
 	});

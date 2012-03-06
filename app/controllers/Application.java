@@ -2,14 +2,11 @@ package controllers;
 
 import static play.libs.Json.toJson;
 
-import java.io.IOException;
 import java.util.List;
 
 import models.Computer;
 
 import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import play.mvc.Controller;
@@ -48,17 +45,19 @@ public class Application extends Controller {
     	System.out.println("Save : Controller");
     	JsonNode json = request().body().asJson();
     	ObjectMapper mapper = new ObjectMapper();
+    	Computer computer = null;
     	try {
 			
-    		Computer computer = mapper.readValue(json, Computer.class);
+    		computer = mapper.readValue(json, Computer.class);
     		computer.save();
+    		    		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return internalServerError();
 		} 
 		
-		return ok();
+		return ok(toJson(computer));
     }
     
     public static Result update(Long id){

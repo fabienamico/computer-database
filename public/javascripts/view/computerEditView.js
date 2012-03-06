@@ -29,10 +29,15 @@ window.ComputerEditView = Backbone.View.extend({
 			this.$('input[type="text"]').val(''); //on vide le form
 			
 			if (this.computer.isNew()) {
-				router.computersCollectionView.collection.create(this.computer)
+				var self = this;
+				console.log('Create .. ');
+				this.computer = router.computersCollectionView.collection.create(this.computer);
+				console.log("Computer id : ", this.computer.id)
 			} else {
 				this.computer.save();
 			}
+			
+			router.navigate("/", {replace: true});
 
 		},
         
