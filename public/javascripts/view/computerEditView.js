@@ -2,7 +2,7 @@ window.ComputerEditView = Backbone.View.extend({
 		el : $('#app-container'),
 
 		initialize : function() {
-			this.template = _.template($('#computer-edit-template').html());
+			this.template = _.template(tpl.get('computer-edit'));
 
 		},
 

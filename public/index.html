@@ -9,8 +9,10 @@
 <link rel="stylesheet" type="text/css" media="screen"
 	href="/assets/stylesheets/main.css">
 <script src="assets/javascripts/jquery-1.7.1.min.js"></script>
+<script src="assets/javascripts/jquery.tmpload-v3.0.js"></script>
 <script src="assets/javascripts/underscore-min.js"></script>
 <script src="assets/javascripts/backbone.js"></script>
+
 <!--<script src="assets/javascripts/backbone.dualstorage.js"></script> -->
 
 </head>
@@ -23,149 +25,7 @@
 		</h1>
 	</header>
 
-		
-		<script type="text/template" id="computers-collection-template">
 
-	<section id="main">
-
-
-		<h1 id="homeTitle">6 computers found</h1>
-
-
-
-		<div id="actions">
-
-			<form action="/computers?o=desc&amp;f=ace" method="GET">
-				<input type="search" id="searchbox" name="f" value="ace"
-					placeholder="Filter by computer name..."> <input
-					type="submit" id="searchsubmit" value="Filter by name"
-					class="btn primary">
-			</form>
-
-			<a class="btn success" id="add" href="#computer">Add a new
-				computer</a>
-
-		</div>
-
-        <table class="computers zebra-striped">
-			<thead>
-				<tr>
-
-					<th class="name header headerSortDown"><a
-						href="/computers?o=desc&amp;f=ace">Computer name</a></th>
-
-
-					<th class="introduced header "><a
-						href="/computers?s=introduced&amp;f=ace">Introduced</a></th>
-
-
-					<th class="discontinued header "><a
-						href="/computers?s=discontinued&amp;f=ace">Discontinued</a></th>
-
-
-					<th class="company_name header "><a
-						href="/computers?s=company.name&amp;f=ace">Company</a></th>
-
-				</tr>
-			</thead>
-			<tbody>
-          			<% _.each(computers, function(computer) { %>
-						<tr>
-							<td><a href="#computer/<%=computer.id %>"><%= computer.name %></a></td>
-							<td><em>-</em></td>
-							<td><em>-</em></td>
-							<td><em>-</em></td>
-						</tr>
-            
-         		 	<% }); %>
-        			</tbody>
-		</table>
-
-		<div id="pagination" class="pagination">
-			<ul>
-
-				<li class="prev disabled"><a>&larr; Previous</a></li>
-
-				<li class="current"><a>Displaying 1 to 6 of 6</a></li>
-
-				<li class="next disabled"><a>Next &rarr;</a></li>
-
-			</ul>
-		</div>
-
-
-
-
-	</section>
-
-
-    	</script>
-    	
-    	
-    	<script type="text/template" id="computer-edit-template">
-<section id="main">
-            
-    <h1>Add a computer</h1>
-    
-        <form id="computer-form" action="/">
-    
-			<input type="hidden" id="id" name="id" class="id" value="<%= computer.id %>" />
-
-            <fieldset>
-
-                <div class="clearfix ">
-                    <label for="name">Computer name</label>
-                    <div class="input">
-                        
-                    <input type="text" id="name" name="name" class="name" value="<%= computer.name %>" />
-
-                        <span class="help-inline">Required</span> 
-                    </div>
-                </div>
-
-                <div class="clearfix ">
-                    <label for="introduced">Introduced date</label>
-                    <div class="input">
-                        
-                    <input type="text" id="introduced" name="introduced" value="" >
-
-                        <span class="help-inline">Date ('yyyy-MM-dd')</span> 
-                    </div>
-                </div>
-
-                <div class="clearfix ">
-                    <label for="discontinued">Discontinued date</label>
-                    <div class="input">
-                        
-                    <input type="text" id="discontinued" name="discontinued" value="" >
-
-                        <span class="help-inline">Date ('yyyy-MM-dd')</span> 
-                    </div>
-                </div>
-
-                <div class="clearfix ">
-                    <label for="discontinued">Discontinued date</label>
-                    <div class="input">
-                        
-                    <input type="text" id="company_name" name="company_name" value="" >
-
-                        <span class="help-inline">Date ('yyyy-MM-dd')</span> 
-                    </div>
-                </div>
-
-            </fieldset>
-        
-            <div class="actions">
-                <input type="submit" value="Update this computer" class="btn primary" id="form"> or 
-                <a href="#" class="btn">Cancel</a> 
-            </div>
-        
-         </form>
-
-    </section>
-			
-		</script>
-    	
     	
     	
 		<div id='app-container'></div>

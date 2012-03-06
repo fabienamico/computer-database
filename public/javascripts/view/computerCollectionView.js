@@ -2,8 +2,7 @@ window.ComputersCollectionView = Backbone.View.extend({
 		el : $('#app-container'),
 
 		initialize : function() {
-			this.template = _.template($('#computers-collection-template')
-					.html());
+			this.template = _.template(tpl.get('computer-list'));
 
 			/*--- binding ---*/	
 			this.collection.bind('change', this.render, this);

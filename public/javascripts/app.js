@@ -49,15 +49,13 @@
 
 	});
 
-	$(function() {
-		/*--- initialisation du router ---*/
-		router = new ComputerRouter();
-
-		/*---
-		    activation du monitoring des "hashchange events"
-		    et dispatch des routes
-		---*/
-		Backbone.history.start();
-	});
+	
+	
+	tpl.loadTemplates(['computer-edit', 'computer-list'],
+		    function () {
+				router = new ComputerRouter();
+		        Backbone.history.start();
+		    });
+	
 
 })(jQuery);
