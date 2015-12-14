@@ -7,3 +7,7 @@ Modification de l'exmple computer-database fournit dans [Play2](http://www.playf
 * Filtre sur le nom
 * Trie sur les colonnes 
 * Pagination
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fabienamico/computer-database/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
